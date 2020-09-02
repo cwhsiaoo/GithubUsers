@@ -1,5 +1,6 @@
 package xlet.android.example.githubusers.model
 
+import androidx.recyclerview.widget.DiffUtil
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -22,4 +23,14 @@ data class User(
     @SerializedName(value = "site_admin")
     @ColumnInfo(name = "site_admin")
     val isSiteAdmin: Boolean? = null
-)
+) {
+    companion object {
+        val DIFF_UTIL = object : DiffUtil.ItemCallback<User>() {
+            override fun areItemsTheSame(oldItem: User, newItem: User) =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: User, newItem: User) =
+                oldItem == newItem
+        }
+    }
+}
