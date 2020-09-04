@@ -1,12 +1,9 @@
 ext.deps = [:]
 def versions = [:]
 versions.android_gradle_plugin = "4.0.1"
-versions.atsl_junit = "1.1.2"
 versions.appcompat = "1.2.0"
 versions.core_ktx = "1.4.0-alpha01"
 versions.constraintlayout = "2.0.1"
-versions.espresso = "3.3.0"
-versions.junit = "4.12"
 versions.kotlin = "1.4.0"
 versions.hilt = "2.28-alpha"
 versions.hilt_viewmodel = "1.0.0-alpha01"
@@ -50,12 +47,6 @@ kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
 deps.kotlin = kotlin
-
-deps.ext_junit = "androidx.test.ext:junit:$versions.atsl_junit"
-
-deps.espresso = "androidx.test.espresso:espresso-core:$versions.espresso"
-
-deps.junit = "junit:junit:$versions.junit"
 
 def hilt = [:]
 hilt.runtime = "com.google.dagger:hilt-android:$versions.hilt"

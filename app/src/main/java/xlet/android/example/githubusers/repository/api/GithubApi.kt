@@ -1,6 +1,5 @@
 package xlet.android.example.githubusers.repository.api
 
-import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -14,8 +13,4 @@ interface GithubApi {
     suspend fun getUserList(
         @Query("since") since: Int = 0
     ): Response<List<User>>
-
-    @Headers("Accept: application/vnd.github.v3+json")
-    @GET("users")
-    fun getFirstUserList(): Single<List<User>>
 }

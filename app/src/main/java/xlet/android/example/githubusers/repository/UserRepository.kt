@@ -11,8 +11,6 @@ class UserRepository @Inject constructor(
     private val _db: AppDatabase,
     private val _githubApi: GithubApi
 ) {
-    fun getFirstUserList() = _githubApi.getFirstUserList()
-
     @ExperimentalPagingApi
     fun pagingUsers() = Pager(
         config = PagingConfig(20),
